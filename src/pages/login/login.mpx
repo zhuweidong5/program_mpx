@@ -1,0 +1,97 @@
+
+
+
+
+
+
+
+<template>
+  <view class='container'>
+    <view class="wel_img" ></view>
+    <button class="wel_btn" bind:tap="goIndex">由此进入</button>
+  </view>
+</template>
+
+<script>
+let appInst = getApp();
+// import mpx from "@mpxjs/core";
+// import loginStore from "../../store/login";
+// import hospitalInfoStore from "../../store/hospital-info";
+// import configStore from "../../store/config";
+import { createPage } from "@mpxjs/core";
+// import DateUtility from "../../code/utils/date-utility";
+// import { SystemService } from '../../code/services/system-service';
+// import configTheme from "../../code/mixins/config-theme.js";
+// import AliService from "../../code/services/ali-service.js";
+import { configLib } from '../../code/libs/index';
+// import { pathLibrary, actionUrl } from '@/code/libs/path/path-library';
+// import RouterService from '@/code/services/router-service';
+createPage({
+//   mixins:[configTheme],
+  data: {
+    query: null,
+    // isInit: false,
+    bgcSrc: `${appInst.globalData.imgUrl}tp_b2_2.png`
+  },
+
+  async onLoad(query) {
+    console.log("onLoad -> query", query);
+    console.log("onLoad -> 2", `${appInst.globalData.imgUrl}`);
+    // this.query = query;
+  },
+  async onShow() {
+
+      // 小程序启动 先进行 缓存清除
+      if(__mpx_mode__ === 'ali') {
+        my.clearStorage();
+      }
+  },
+  methods: {
+    async goIndex() {
+        //   const systemService = await SystemService.getInstance();
+        //   await systemService._init();
+        //   my.setStorageSync({  key: 'authType', data: {authType: false}});
+        //   new RouterService().goSwitchTab(pathLibrary.PAGES_HOME);
+
+       
+      // wx.showLoading({ title: "登录中...", mask: true });
+  
+      // wx.hideLoading();
+      // 显示合适的UI
+      // systemService.show(this.query);
+      // 登录成功后尝试埋点上报,(这是一行demo样板代码发布前会删除)
+      // systemService.reportAnalytics({api: 'web.witontek.com/eHospital2/auth/miniProgramLogin', success: true, code: 'success', msg: '操作成功'});
+    }
+  }
+});
+</script>
+
+
+<style >
+    .container {
+        height: 100%;
+        background-color: #51ACE9;
+        padding-top: 42rpx;
+        
+    }
+    .wel_img{
+        width: 531rpx;
+        height: 635rpx;
+        margin: 0 auto;
+        margin-bottom: 90rpx;
+        background: url('../../../image/ali/tp_b2_2.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        }
+        .wel_btn{
+        width: 590rpx;
+        height: 88rpx;
+        line-height: 88rpx;
+        margin: 0 auto;
+        text-align: center;
+        border-radius: 44rpx;
+        font-size: 38rpx;
+        color: #51ace9;
+        background-color: #fff;
+        }
+</style>
