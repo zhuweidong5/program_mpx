@@ -1,0 +1,16 @@
+<template>
+  <view class="list">
+   123
+  </view>
+</template>
+
+
+<style lang="stylus">
+
+</style>
+
+<script type="application/json">
+  {
+    "component": true
+  }
+</script>

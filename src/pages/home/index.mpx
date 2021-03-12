@@ -4,19 +4,43 @@
     home
     home
     home
-    home
+    home吗
+    <button class="wel_btn" bind:tap="goIndex">由此进入</button>
+
   </view>
 </template>
 
+<script>
+let appInst = getApp();
+import { createPage } from "@mpxjs/core";
+import { configLib } from '../../code/libs/index';
+import { pathLibrary, actionUrl } from '../../code/libs/path/path-library';
+import RouterService from '../../code/services/router-service';
+createPage({
+  // mixins:[configTheme],
+  data: {
+    
+  },
 
+  async onLoad() {
+  },
+  async onShow() {
+  },
+  methods: {
+    async goIndex() {
+        console.log('pathLibrary.PACHAGES_PATIENT_LIST:', pathLibrary.PACHAGES_PATIENT_LIST)
+       new RouterService().goNavigateTo(pathLibrary.PACHAGES_PATIENT_LIST);
+    }
+  }
+});
+</script>
 
 <style lang="stylus">
-  .list
-    background-color red
+
 </style>
 
 <script type="application/json">
   {
-    "component": true
+    "component": true,
   }
 </script>

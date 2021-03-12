@@ -1,0 +1,45 @@
+<template>
+  <view class="list">
+    个人中心
+    <view bind:tap="goIndex">跳吧</view>
+  </view>
+</template>
+
+
+<script>
+  let appInst = getApp();
+
+  import { createPage } from "@mpxjs/core";
+  import { configLib } from '../../code/libs/index';
+  import { pathLibrary, actionUrl } from '../../code/libs/path/path-library';
+  import RouterService from '../../code/services/router-service';
+  createPage({
+  //   mixins:[configTheme],
+    data: {
+      query: null,
+    },
+
+    async onLoad(query) {
+    
+    },
+    async onShow() {
+
+    },
+    methods: {
+      goIndex() {
+            new RouterService().goSwitchTab(pathLibrary.PACHAGES_HOSPITAL_NAV);
+      }
+    }
+  });
+</script>
+
+
+<style lang="stylus">
+
+</style>
+
+<script type="application/json">
+  {
+    "component": true
+  }
+</script>

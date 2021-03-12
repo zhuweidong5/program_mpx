@@ -1,0 +1,18 @@
+<template>
+  <view class="list">
+    ziziiziiz
+  </view>
+</template>
+
+
+
+<style lang="stylus">
+
+</style>
+
+<script type="application/json">
+    {
+        "navigationBarTitleText": "新增就诊人",
+       
+    }
+</script>

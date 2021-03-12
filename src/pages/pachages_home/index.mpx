@@ -1,0 +1,23 @@
+<template>
+  <view>
+
+  </view>
+</template>
+
+<script>
+import { createPage } from "@mpxjs/core";
+
+createPage({
+  onLoad() {}
+});
+</script>
+
+<script type="application/json">
+
+  {
+     "pages": [
+       "./patient/patinet-list/index"
+    ]
+   
+  }
+</script>

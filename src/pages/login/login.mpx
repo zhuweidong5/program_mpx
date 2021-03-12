@@ -1,10 +1,4 @@
 
-
-
-
-
-
-
 <template>
   <view class='container'>
     <view class="wel_img" ></view>
@@ -14,20 +8,21 @@
 
 <script>
 let appInst = getApp();
+import { createPage } from "@mpxjs/core";
 // import mpx from "@mpxjs/core";
 // import loginStore from "../../store/login";
 // import hospitalInfoStore from "../../store/hospital-info";
 // import configStore from "../../store/config";
-import { createPage } from "@mpxjs/core";
+
 // import DateUtility from "../../code/utils/date-utility";
 // import { SystemService } from '../../code/services/system-service';
 // import configTheme from "../../code/mixins/config-theme.js";
 // import AliService from "../../code/services/ali-service.js";
-import { configLib } from '../../code/libs/index';
-// import { pathLibrary, actionUrl } from '@/code/libs/path/path-library';
-// import RouterService from '@/code/services/router-service';
+// import { configLib } from '../../code/libs/index';
+import { pathLibrary, actionUrl } from '../../code/libs/path/path-library';
+import RouterService from '../../code/services/router-service';
 createPage({
-//   mixins:[configTheme],
+//   mixins:[configTheme], // 可以进行换肤操作
   data: {
     query: null,
     // isInit: false,
@@ -51,7 +46,8 @@ createPage({
         //   const systemService = await SystemService.getInstance();
         //   await systemService._init();
         //   my.setStorageSync({  key: 'authType', data: {authType: false}});
-        //   new RouterService().goSwitchTab(pathLibrary.PAGES_HOME);
+        console.log('pathLibrary.PAGES_HOME:', pathLibrary.PAGES_HOME)
+          new RouterService().goSwitchTab(pathLibrary.PAGES_HOME);
 
        
       // wx.showLoading({ title: "登录中...", mask: true });

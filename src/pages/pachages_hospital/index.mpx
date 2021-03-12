@@ -1,0 +1,26 @@
+<template>
+  <view>
+
+  </view>
+</template>
+
+<script>
+import { createPage } from "@mpxjs/core";
+
+createPage({
+  onLoad() {
+  }
+});
+</script>
+
+<script type="application/json">
+
+  {
+     "pages": [
+       "./hospital/hospital_floor/index",
+       "./hospital/hospital_nav/index"
+    ],
+    "usingComponents": {
+    }
+  }
+</script>

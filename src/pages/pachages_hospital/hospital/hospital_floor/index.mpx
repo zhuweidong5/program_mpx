@@ -1,0 +1,18 @@
+<template>
+  <view class="list">
+    <!-- <view wx:for="{{listData}}" wx:key="index">{{item}}</view> -->
+    ziziiziiz
+  </view>
+</template>
+
+
+
+<style lang="stylus">
+
+</style>
+
+<script type="application/json">
+  {
+    "component": true
+  }
+</script>
