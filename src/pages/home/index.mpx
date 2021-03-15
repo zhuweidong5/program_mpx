@@ -16,6 +16,11 @@ import { createPage } from "@mpxjs/core";
 import { configLib } from '../../code/libs/index';
 import { pathLibrary, actionUrl } from '../../code/libs/path/path-library';
 import RouterService from '../../code/services/router-service';
+
+import { StoreService } from "../../code/services/store-service";
+import { storeLib } from "../../code/libs/index";
+
+
 createPage({
   // mixins:[configTheme],
   data: {
@@ -23,6 +28,12 @@ createPage({
   },
 
   async onLoad() {
+
+     // 查询科室列表
+      await StoreService.getInstance().doAction(
+        storeLib.departmentStore,
+        "qryAllDepartment"
+      );
   },
   async onShow() {
   },

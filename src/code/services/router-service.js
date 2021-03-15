@@ -45,17 +45,17 @@ export default class RouterService {
   }
 
   // 外部定义菜单跳转
-//   goNavigateToAction(item, params) {
-//     console.log('---------', item);
-//     // 判断 该菜单是否启用
-//     if (item.status) {
-//       GlobalFunction.init().throttle(() => {
-//         _statusOpen(item, params);
-//       }, 2000, this);
-//     } else {
-//     //   alertService.showToastNoOpen();
-//     }
-//   }
+  goNavigateToAction(item, params) {
+    console.log('---------', item);
+    // 判断 该菜单是否启用
+    if (item.status) {
+      GlobalFunction.init().throttle(() => {
+        _statusOpen(item, params);
+      }, 2000, this);
+    } else {
+    //   alertService.showToastNoOpen();
+    }
+  }
 };
 
 // 菜单启用 - 正常跳转
