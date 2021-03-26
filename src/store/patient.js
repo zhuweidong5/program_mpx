@@ -8,7 +8,7 @@
  import AlertService from '../code/services/alert-service';
  
  const departmentStore = createStore({
-   state: {
+    state: {
      departmentList: [] // 科室列表
    },
  
@@ -31,31 +31,32 @@
    // 异步
    actions: {
  
-     // 获取 科室列表
-     qryAllDepartment: async (context, requestInfo) => {
-       try {
-        //  const info = {
-        //    hospital_id: configLib.hospitalId,
-        //    hospital_area_id: requestInfo ? requestInfo.hospital_area_id : '',
-        //  };
-        console.log('走路吗1：', serverApiLibrary.qryList)
- 
-         const res = await HttpService.getInstance().quickPost(serverApiLibrary.qryList, {});
-         console.log('走路吗2：', res)
+        // 获取 科室列表
+        qryAllDepartment: async (context, requestInfo) => {
+            try {
+                //  const info = {
+                //    hospital_id: configLib.hospitalId,
+                //    hospital_area_id: requestInfo ? requestInfo.hospital_area_id : '',
+                //  };
+                
+                console.log('走路吗1：', serverApiLibrary.qryList)
+        
+                const res = await HttpService.getInstance().quickPost(serverApiLibrary.qryList, {});
+                console.log('走路吗2：', res)
 
-        //  if (res.responseCode === BasePublicLibrary.success) {
-        //      console.log('走路吗3：', res)
-        //    context.commit('setDepartmentList', res.responseData.list);
-        //  } else {
-        //    AlertService.showToast(res.responseMessage);
-        //  }
-       } catch (e) {
-           console.log('请求错误了-亲', e)
-        //  AlertService.showSimpleAlert(titleLib.login, errorLib.httpError);
-       }
-     }
-   }
- });
+                if (res.message === 'success') {
+                    console.log('走路吗3：', res)
+                context.commit('setDepartmentList', res.responseData.list);
+                } else {
+                //    AlertService.showToast(res.responseMessage);
+                }
+            } catch (e) {
+                console.log('请求错误了-亲', e)
+                //  AlertService.showSimpleAlert(titleLib.login, errorLib.httpError);
+            }
+        }
+    }
+});
  
- export default departmentStore;
+export default departmentStore;
  

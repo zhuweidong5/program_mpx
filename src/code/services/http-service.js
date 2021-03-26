@@ -44,10 +44,10 @@ class HttpService {
 
   // 外部使用，对post做了封装，并自动填充token，正常逻辑中应使用本方法
   quickPost = async (api, info, inPage) => {
-      console.log('请求地址：', api)
+    //   console.log('请求地址：', api)
     let myToken;
     if (__mpx_mode__ === 'ali') {
-      console.log('请求地址2：', api)
+    //   console.log('请求地址2：', api)
 
     //   myToken = await this.getTokenAli();
       myToken = '';
@@ -132,6 +132,9 @@ class HttpService {
 
   // 内部 post，不做 token 处理，直接发送
   _post = async (api, info, token, inPage) => {
+    //   console.log('api:', configLib.serverUrl + api)
+    //   console.log('info:', info)
+    //   console.log('token:', token)
     return this.fly.post(configLib.serverUrl + api + this._getRandom(), {
       requestToken: token,
       requestData: info,

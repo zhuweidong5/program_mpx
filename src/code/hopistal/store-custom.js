@@ -6,6 +6,7 @@ import customStore_zjksdeyyadmin from './zjksdeyyadmin/custom';
 const StoreCustom = {
    
     'customStore_zjksdeyyadmin': customStore_zjksdeyyadmin
+    // ... other
 }
 
 export default StoreCustom;
